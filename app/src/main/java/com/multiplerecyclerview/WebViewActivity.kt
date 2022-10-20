@@ -2,8 +2,9 @@ package com.multiplerecyclerview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.webkit.WebView
 import android.webkit.WebViewClient
-import kotlinx.android.synthetic.main.activity_web_view.*
+
 
 class WebViewActivity : AppCompatActivity() {
 
@@ -12,6 +13,11 @@ class WebViewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_web_view)
 
+        val webView = findViewById<WebView>(R.id.webView)
+        val getWebUrl = intent.getStringExtra("web").toString()
 
+        webView.webViewClient = WebViewClient()
+
+        webView.loadUrl(getWebUrl)
     }
 }

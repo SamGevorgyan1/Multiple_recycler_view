@@ -1,21 +1,19 @@
 package com.multiplerecyclerview.model
 
-sealed class DataModel {
+sealed class PostDataModel {
 
-
-    data class ImageUrl(
-        val imageUrl: String
-
-    ):DataModel()
+    data class ImagePost(
+        val imagePostUrl: String
+    ):PostDataModel()
 
     data class TextPost(
         val textPost: String
-    ):DataModel()
+    ):PostDataModel()
 
     data class WebViewPost(
         val webImgUrl:String,
         val webViewUrl:String
-    ):DataModel()
+    ):PostDataModel()
 
 
 
